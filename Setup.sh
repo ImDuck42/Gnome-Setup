@@ -70,8 +70,8 @@ curl -fsSL https://raw.githubusercontent.com/Tetrax-10/Nord-Spotify/master/insta
 # Delete the Gnome-Setup folder
 
 cd ..
-sudo rmdir -r Gnome-Setup
+sudo rm -r Gnome-Setup
 
 
 # Restart
-restart
+reboot
