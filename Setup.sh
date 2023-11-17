@@ -85,11 +85,12 @@ while true; do
     case $option in
         1)
             # Option 1: Set up the PC
-            echo "Setting up the PC..."
-	    sleep 5
-     		# Print the setupsh ASCII art
-    		echo -e "$settingup_ascii_art"
-            # Add your setup commands here
+            	echo "Setting up the PC..."
+	    	sleep 5
+     		clear
+     		     # Print the setupsh ASCII art
+    		     echo -e "$settingup_ascii_art"
+            	# Add your setup commands here
             ;;
 
         2)
