@@ -31,7 +31,9 @@ cd Nordzy-cursors
 cd WhiteSur-gtk-theme
 gsettings set org.gnome.desktop.background picture-uri 'Dark_Moon.png'
 sudo ./tweaks.sh -g -n -b 'Dark_Moon.png'
-
+cd ..
+cd ..
+cd Gnome-Setup
 
 # Install Dependencies
 sudo pacman -S --needed - < install.txt --noconfirm
@@ -62,6 +64,13 @@ curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-marketplace/mai
 spicetify backup apply
 
 curl -fsSL https://raw.githubusercontent.com/Tetrax-10/Nord-Spotify/master/install-scripts/install.sh | sh
+
+
+# Delete the Gnome-Setup folder
+
+cd ..
+sudo rmdir -r Gnome-Setup
+
 
 # Restart
 restart
