@@ -33,6 +33,7 @@ cp Dark_moon.png WhiteSur-gtk-theme
 cd WhiteSur-gtk-theme
 gsettings set org.gnome.desktop.background picture-uri 'Dark_Moon.png'
 sudo ./tweaks.sh -g -n -b 'Dark_Moon.png'
+sudo ./tweaks.sh -F -d
 cd ..
 
 
