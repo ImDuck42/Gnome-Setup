@@ -1,4 +1,3 @@
-gnome-tweaks
 appimagelauncher
 discord
 spotify
