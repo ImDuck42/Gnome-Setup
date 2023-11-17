@@ -2,6 +2,7 @@
 
 # Clone all files for the Theme
 
+cd ..
 mkdir .Applications
 mkdir Setup
 cd Setup
@@ -10,7 +11,6 @@ git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
 git clone https://github.com/alvatip/Nordzy-icon.git
 git clone https://github.com/alvatip/Nordzy-cursors.git
 
-git clone https://github.com/ImDuck42/Gnome-Setup.git
 
 # Install the Theme, Icon and Cursor
 
