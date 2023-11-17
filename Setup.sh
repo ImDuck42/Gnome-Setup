@@ -88,9 +88,10 @@ while true; do
             	echo -e "${BLUE}Setting up the PC..."
 	    	sleep 5
      		clear
-     		     # Print the setupsh ASCII art
-    		     echo -e "$settingup_ascii_art"
+     			# Print the setupsh ASCII art
+    			echo -e "$settingup_ascii_art"
             	# Add your setup commands here
+            	sudo pacman -Syyu
             ;;
 
         2)
