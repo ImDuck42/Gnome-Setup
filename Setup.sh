@@ -36,12 +36,27 @@ LIGHT_CYAN='\033[1;36m'
 #    echo -e "${BOLD}${YELLOW}This is bold yellow text.${RESET}"
 #    echo -e "${BOLD}${BLUE}This is bold blue text.${RESET}"
 
+# Define ASCII art for welcome text
+custom_ascii_art="
+${MAGENTA}   _____      _                    _     ${RESET}
+${MAGENTA}  / ____|    | |                  | |    ${RESET}
+${MAGENTA} | (___   ___| |_ _   _ _ __   ___| |__  ${RESET}
+${MAGENTA}  \___ \ / _ \ __| | | | '_ \ / __| '_ \ ${RESET}
+${MAGENTA}  ____) |  __/ |_| |_| | |_) |\__ \ | | |${RESET}
+${MAGENTA} |_____/ \___|\__|\__,_| .__(_)___/_| |_|${RESET}
+${MAGENTA}                       | |               ${RESET}
+${MAGENTA}                       |_|               ${RESET}
+"
 
 # Check if run as root
 if [ "$(id -u)" -ne 0 ]; then
-    echo "Please run this script as root."
+    echo -e "${BOLD}${RED}Please run this script as root...${RESET}"
     exit 1
 fi
+
+
+# Print the custom ASCII art
+echo -e "$custom_ascii_art"
 
 # Update
 sudo pacman -Syuu
@@ -103,6 +118,9 @@ sudo sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInsta
 killall Discord
 
 # Aply Spicetify and Marketplace and the Nord theme
+spotify
+sleep 30
+killall spotify
 curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.sh | sh
 curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-marketplace/main/resources/install.sh | sh
 
