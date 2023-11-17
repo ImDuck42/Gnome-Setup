@@ -17,6 +17,12 @@ LIGHT_BLUE='\033[1;34m'
 LIGHT_MAGENTA='\033[1;35m'
 LIGHT_CYAN='\033[1;36m'
 
+# Example usage
+#    echo -e "${RED}This is red text${NC}"
+#    echo -e "${LIGHT_GREEN}This is light green text${NC}"
+#    echo -e "${YELLOW}This is yellow text${NC}"
+#    echo -e "${LIGHT_BLUE}This is light blue text${NC}"
+
 # Check if run as root
 if [ "$(id -u)" -ne 0 ]; then
     echo "Please run this script as root."
