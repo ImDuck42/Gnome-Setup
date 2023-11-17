@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Check if run as root
+
+if [ "$(id -u)" -ne 0 ]; then
+    echo "Please run this script as root."
+    exit 1
+fi
+
 
 # Update
 sudo pacman -Syuu
