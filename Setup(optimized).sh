@@ -95,10 +95,8 @@ while true; do
     esac
 done
 
-# Update
+# Update, Uninstall and Install dependencies
 pacman -Syuu --noconfirm
-
-# Uninstall and Install dependencies
 pacman -Rs htop firedragon geary gestures mpv --noconfirm
 pacman -S appimagelauncher discord spotify spicetify-cli totem lolipop gimp obs-studio telegram-desktop stacer libreoffice-fresh yuzu-mainline-git citra-canary-git dconf-editor qbittirrent gnome-boxes visual-studio-code-bin steam wine bottles opera cups jre-openjdk neofetch --noconfirm
 
