@@ -23,6 +23,20 @@ LIGHT_CYAN='\033[1;36m'
 #    echo -e "${YELLOW}This is yellow text${NC}"
 #    echo -e "${LIGHT_BLUE}This is light blue text${NC}"
 
+# Bold text
+#    BOLD='\033[1m'
+#    RESET='\033[0m'
+
+# Example usage
+#    echo -e "${BOLD}This is bold text.${RESET}"
+
+# Example usage
+#    echo -e "${BOLD}${RED}This is bold red text.${RESET}"
+#    echo -e "${BOLD}${GREEN}This is bold green text.${RESET}"
+#    echo -e "${BOLD}${YELLOW}This is bold yellow text.${RESET}"
+#    echo -e "${BOLD}${BLUE}This is bold blue text.${RESET}"
+
+
 # Check if run as root
 if [ "$(id -u)" -ne 0 ]; then
     echo "Please run this script as root."
