@@ -59,7 +59,6 @@ cd WhiteSur-gtk-theme
 ./install.sh --nord -l -c Dark -m -p 60 -P bigger --normal
 cp Dark_moon.png WhiteSur-gtk-theme
 cd WhiteSur-gtk-theme
-gsettings set org.gnome.desktop.background picture-uri 'Dark_Moon.png'
 sudo ./tweaks.sh -g -n -b 'Dark_Moon.png'
 sudo ./tweaks.sh -F -d
 cd ..
@@ -73,12 +72,23 @@ cd Nordzy-cursors
 ./install.sh
 cd ..
 
+# Use Background Theme Iconpack and Cursor
+cd WhiteSur-gtk-theme
+gsettings set org.gnome.desktop.background picture-uri 'Dark_Moon.png'
+gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-Dark-solid-nord'
+gsettings set org.gnome.desktop.interface icon-theme 'Nordzy-dark--light_panel'
+sudo update-alternatives --set x-cursor-theme ~/.icons/Nordzy-cursors
+
+# Make Theme tweaks
+sudo ./tweaks.sh -g -n -b 'Dark_Moon.png'
+sudo ./tweaks.sh -F -d
+cd ..
 
 # Install Vencord 
 sudo sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
 killall Discord
 
-# Aply Spicetify and install The theme
+# Aply Spicetify and Marketplace and the Nord theme
 curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.sh | sh
 curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-marketplace/main/resources/install.sh | sh
 
@@ -92,6 +102,3 @@ sudo rm -r Gnome-Setup
 
 # Set default shell to fish
 chsh -s /usr/bin/fish
-
-# Restart
-reboot
