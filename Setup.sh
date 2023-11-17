@@ -68,7 +68,7 @@ while true; do
     echo -e "${BOLD}${GREEN}3) Exit the script${RESET}"
 
     # Prompt user for input
-    read -p "${BOLD}${BLUE}Select an option: ${RESET}" option
+    read -p "Select an option: " option
 
     case $option in
         1)
