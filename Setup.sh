@@ -58,6 +58,45 @@ fi
 # Print the custom ASCII art
 echo -e "$custom_ascii_art"
 
+while true; do
+    # Display menu options
+    echo -e "${BOLD}${YELLOW}1) Set up the PC${RESET}"
+    echo -e "${BOLD}${GREEN}2) Print the script${RESET}"
+    echo -e "${BOLD}${RED}3) Exit the script${RESET}"
+
+    # Prompt user for input
+    read -p "Select an option (1/2/3): " option
+
+    case $option in
+        1)
+            # Option 1: Set up the PC
+            echo "Setting up the PC..."
+            # Add your setup commands here
+            ;;
+
+        2)
+            # Option 2: Print the script
+            echo -e "${BOLD}${YELLOW}Printing the script:${RESET}"
+            cat "$0"  # Print the script
+            read -p "Type 'q' to exit: " response
+            if [ "$response" == "q" ]; then
+                clear  # Clear the terminal
+            fi
+            ;;
+
+        3)
+            # Option 3: Exit the script
+            echo "Exiting the script. Goodbye!"
+            exit 0
+            ;;
+
+        *)
+            # Invalid option
+            echo "Invalid option. Please select 1, 2, or 3."
+            ;;
+    esac
+done
+
 # Update
 sudo pacman -Syuu
 
