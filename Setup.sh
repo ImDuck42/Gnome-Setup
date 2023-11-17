@@ -24,8 +24,8 @@ LIGHT_CYAN='\033[1;36m'
 #    echo -e "${LIGHT_BLUE}This is light blue text${NC}"
 
 # Bold text
-#    BOLD='\033[1m'
-#    RESET='\033[0m'
+BOLD='\033[1m'
+RESET='\033[0m'
 
 # Example usage
 #    echo -e "${BOLD}This is bold text.${RESET}"
