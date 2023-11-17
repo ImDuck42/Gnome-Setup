@@ -79,13 +79,16 @@ while true; do
 
         2)
             # Option 2: Print the script
-            echo -e "${BOLD}${YELLOW}Printing the script:${RESET}"
-            clear
-            cat "$0"  # Print the script
-            read -p "Type 'q' to exit: " response
-            if [ "$response" == "q" ]; then
-                clear  # Clear the terminal
-            fi
+	        echo -e "${BOLD}${YELLOW}Printing the script:${RESET}"
+	        sleep 2
+	        clear
+	        echo -e "${CYAN}"
+	        cat "$0"  # Print the script
+	        echo -e "${RESET}"
+	        read -p "Type 'q' to exit: " response
+	        if [ "$response" == "q" ]; then
+	        clear  # Clear the terminal
+	        fi
             ;;
 
         3)
