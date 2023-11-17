@@ -24,6 +24,7 @@ cd ..
 
 cd Nordzy-cursors
 ./install.sh
+cd ..
 
 
 # Install Desktop Background and GDM Theme 
