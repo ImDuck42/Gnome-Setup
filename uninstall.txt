@@ -2,4 +2,5 @@ htop
 firedragon
 geary
 gestures
+mpv
 
