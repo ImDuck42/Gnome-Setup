@@ -107,6 +107,10 @@ systemctl start org.cups.cupsd
 # Clone all files for the Theme
 cd ..
 mkdir -p .Applications
+mkdir -p Games
+cd Games
+mkdir -p Yuzu Citra
+cd ..
 cd Gnome-Setup
 
 git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
