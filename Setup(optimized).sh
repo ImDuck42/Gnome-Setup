@@ -9,19 +9,11 @@ BLUE='\033[0;34m'
 MAGENTA='\033[0;35m'
 CYAN='\033[0;36m'
 WHITE='\033[1;37m'
-GRAY='\033[1;30m'
-LIGHT_RED='\033[1;31m'
-LIGHT_GREEN='\033[1;32m'
-LIGHT_YELLOW='\033[1;33m'
-LIGHT_BLUE='\033[1;34m'
-LIGHT_MAGENTA='\033[1;35m'
-LIGHT_CYAN='\033[1;36m'
 
-# Bold text
 BOLD='\033[1m'
 RESET='\033[0m'
 
-# Define ASCII art for welcome text
+# ASCII art
 setupsh_ascii_art="
 ${MAGENTA}   _____      _                    _     ${RESET}
 ${MAGENTA}  / ____|    | |                  | |    ${RESET}
@@ -33,7 +25,6 @@ ${MAGENTA}                       | |               ${RESET}
 ${MAGENTA}                       |_|               ${RESET}
 "
 
-# Define ASCII art for Setting up text
 settingup_ascii_art="
 ${MAGENTA}   _____      _   _   _                           ${RESET}
 ${MAGENTA}  / ____|    | | | | (_)                          ${RESET}
@@ -56,13 +47,12 @@ clear
 
 # Main screen
 while true; do
-    # Print the setupsh ASCII art
     echo -e "$setupsh_ascii_art"
 
     # Display menu options
-    echo -e "${BOLD}${GREEN}1) Set up the PC${RESET}"
-    echo -e "${BOLD}${GREEN}2) Print the script${RESET}"
-    echo -e "${BOLD}${GREEN}3) Exit the script${RESET}"
+    echo -e "${BOLD}${GREEN}1) Set up the PC"
+    echo -e "2) Print the script"
+    echo -e "3) Exit the script${RESET}"
 
     # Prompt user for input
     read -p "Select an option: " option
@@ -73,10 +63,9 @@ while true; do
             echo -e "${BLUE}Setting up the PC..."
             sleep 5
             clear
-            # Print the setupsh ASCII art
             echo -e "$settingup_ascii_art"
             # Add your setup commands here
-            pacman -Syyu
+            pacman -Syyu --noconfirm
             ;;
 
         2)
@@ -85,23 +74,21 @@ while true; do
             sleep 2
             clear
             echo -e "${CYAN}"
-            cat "$0"  # Print the script
+            cat "$0"
             echo -e "${RESET}"
             read -p "Type 'q' to exit: " response
-            if [ "$response" == "q" ]; then
-                clear  # Clear the terminal
-            fi
+            [ "$response" == "q" ] && clear
             ;;
 
         3)
             # Option 3: Exit the script
-            echo -e "${RED}Exiting the script. Goodbye!${RESET}"
+            echo -e "${RED}Exiting the script. Goodbye!"
             exit 0
             ;;
 
         *)
             # Invalid option
-            echo -e "${RED}Invalid option. Please select 1, 2, or 3.${RESET}"
+            echo -e "${RED}Invalid option. Please select 1, 2, or 3."
             sleep 2
             clear
             ;;
@@ -109,12 +96,10 @@ while true; do
 done
 
 # Update
-pacman -Syuu
+pacman -Syuu --noconfirm
 
-# Uninstall dependencies
+# Uninstall and Install dependencies
 pacman -Rs htop firedragon geary gestures mpv --noconfirm
-
-# Install dependencies
 pacman -S appimagelauncher discord spotify spicetify-cli totem lolipop gimp obs-studio telegram-desktop stacer libreoffice-fresh yuzu-mainline-git citra-canary-git dconf-editor qbittirrent gnome-boxes visual-studio-code-bin steam wine bottles opera cups jre-openjdk neofetch --noconfirm
 
 # Enable Cups
@@ -123,7 +108,7 @@ systemctl start org.cups.cupsd
 
 # Clone all files for the Theme
 cd ..
-mkdir .Applications
+mkdir -p .Applications
 cd Gnome-Setup
 
 git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
@@ -131,9 +116,11 @@ git clone https://github.com/alvatip/Nordzy-icon.git
 git clone https://github.com/alvatip/Nordzy-cursors.git
 
 # Install the WhiteSur gtk/GDM theme and tweaks
-cd WhiteSur-gtk-theme
 cp Dark_moon.png WhiteSur-gtk-theme
+cd WhiteSur-gtk-theme
 ./install.sh --nord -l -c Dark -m -p 60 -P bigger --normal
+sudo ./tweaks.sh -g -n -b 'Dark_Moon.png'
+sudo ./tweaks.sh -F -d
 cd ..
 
 # Install the Iconpack and Cursor
@@ -152,19 +139,14 @@ gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-Dark-solid-nord'
 gsettings set org.gnome.desktop.interface icon-theme 'Nordzy-dark--light_panel'
 update-alternatives --set x-cursor-theme ~/.icons/Nordzy-cursors
 
-# Make Theme tweaks
-sudo ./tweaks.sh -g -n -b 'Dark_Moon.png'
-sudo ./tweaks.sh -F -d
-cd ..
-
-# Install Vencord 
-discord
+# Install Vencord
+discord &
 sleep 30
-sudo sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
+sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
 killall Discord
 
 # Apply Spicetify and Marketplace and the Nord theme
-spotify
+spotify &
 sleep 30
 killall spotify
 curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.sh | sh
