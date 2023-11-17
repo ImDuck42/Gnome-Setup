@@ -15,15 +15,15 @@ git clone https://github.com/alvatip/Nordzy-cursors.git
 # Install the Theme, Icon and Cursor
 
 cd WhiteSur-gtk-theme
-./install.sh --nord -l -c Dark -m -p 60 -P bigger --normal
+./install.sh --nord -l -c Dark -m -p 60 -P bigger --normal --noconfirm
 cd ..
 
 cd Nordzy-icon
-./install.sh -t default -c -p
+./install.sh -t default -c -p --noconfirm
 cd ..
 
 cd Nordzy-cursors
-./install.sh
+./install.sh --noconfirm
 cd ..
 
 
