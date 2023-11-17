@@ -54,18 +54,21 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
+# Clear the screen
+clear
 
-# Print the custom ASCII art
-echo -e "$custom_ascii_art"
-
+# Main screen
 while true; do
+    # Print the custom ASCII art
+    echo -e "$custom_ascii_art"
+
     # Display menu options
-    echo -e "${BOLD}${YELLOW}1) Set up the PC${RESET}"
+    echo -e "${BOLD}${GREEN}1) Set up the PC${RESET}"
     echo -e "${BOLD}${GREEN}2) Print the script${RESET}"
-    echo -e "${BOLD}${RED}3) Exit the script${RESET}"
+    echo -e "${BOLD}${GREEN}3) Exit the script${RESET}"
 
     # Prompt user for input
-    read -p "Select an option (1/2/3): " option
+    read -p "${BOLD}${BLUE}Select an option: ${RESET}" option
 
     case $option in
         1)
@@ -77,6 +80,7 @@ while true; do
         2)
             # Option 2: Print the script
             echo -e "${BOLD}${YELLOW}Printing the script:${RESET}"
+            clear
             cat "$0"  # Print the script
             read -p "Type 'q' to exit: " response
             if [ "$response" == "q" ]; then
