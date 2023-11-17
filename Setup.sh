@@ -1,5 +1,10 @@
 #!/bin/bash
 
+
+# Update
+sudo pacman -Syuu
+
+
 # Clone all files for the Theme
 
 cd ..
