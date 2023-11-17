@@ -4,8 +4,8 @@
 
 cd ..
 mkdir .Applications
-mkdir Setup
-cd Setup
+
+cd Gnome-Setup
 
 git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
 git clone https://github.com/alvatip/Nordzy-icon.git
@@ -29,12 +29,12 @@ cd ..
 
 # Install Desktop Background and GDM Theme 
 
+cp 'Dark_moon.png' cd WhiteSur-gtk-theme
 cd WhiteSur-gtk-theme
 gsettings set org.gnome.desktop.background picture-uri 'Dark_Moon.png'
 sudo ./tweaks.sh -g -n -b 'Dark_Moon.png'
 cd ..
-cd ..
-cd Gnome-Setup
+
 
 # Install Dependencies
 sudo pacman -S --needed - < install.txt --noconfirm
