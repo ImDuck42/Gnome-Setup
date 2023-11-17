@@ -178,6 +178,8 @@ sudo ./tweaks.sh -F -d
 cd ..
 
 # Install Vencord 
+discord
+sleep 30
 sudo sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
 killall Discord
 
