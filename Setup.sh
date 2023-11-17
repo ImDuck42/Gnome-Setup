@@ -53,7 +53,7 @@ sudo pacman -Rs - < uninstall.txt --noconfirm
 
 # Install Vencord 
 
-sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
+sudo sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
 killall Discord
 
 
