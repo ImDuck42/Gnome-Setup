@@ -1,3 +1,5 @@
 htop
 firedragon
+geary
+gestures
 
