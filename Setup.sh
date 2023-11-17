@@ -149,10 +149,9 @@ git clone https://github.com/alvatip/Nordzy-cursors.git
 
 
 # Install the WhiteSur gtk/GDM theme and tweaks
-cd WhiteSur-gtk-theme
-./install.sh --nord -l -c Dark -m -p 60 -P bigger --normal
 cp Dark_moon.png WhiteSur-gtk-theme
 cd WhiteSur-gtk-theme
+./install.sh --nord -l -c Dark -m -p 60 -P bigger --normal
 sudo ./tweaks.sh -g -n -b 'Dark_Moon.png'
 sudo ./tweaks.sh -F -d
 cd ..
@@ -168,7 +167,7 @@ cd ..
 
 # Use Background Theme Iconpack and Cursor
 cd WhiteSur-gtk-theme
-gsettings set org.gnome.desktop.background picture-uri 'Dark_Moon.png'
+gsettings set org.gnome.desktop.background picture-uri '~/Gnome-Setup/WhiteSur-gtk-theme/Dark_Moon.png'
 gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-Dark-solid-nord'
 gsettings set org.gnome.desktop.interface icon-theme 'Nordzy-dark--light_panel'
 sudo update-alternatives --set x-cursor-theme ~/.icons/Nordzy-cursors
