@@ -45,7 +45,7 @@ sudo systemctl start org.cups.cupsd
 
 # Uninstall dependencies
 
-sudo pacman -Rs --needed - < uninstall.txt --noconfirm
+sudo pacman -Rs - < uninstall.txt --noconfirm
 
 
 # Install Vencord 
