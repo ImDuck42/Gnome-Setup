@@ -4,6 +4,18 @@
 # Update
 sudo pacman -Syuu
 
+#Uninstall dependencies
+sudo pacman -Rs --noconfirm
+
+# Install dependencies
+sudo pacman -S --noconfirm
+
+
+# Enable Cups
+
+sudo systemctl enable org.cups.cupsd
+sudo systemctl start org.cups.cupsd
+
 
 # Clone all files for the Theme
 
@@ -20,15 +32,15 @@ git clone https://github.com/alvatip/Nordzy-cursors.git
 # Install the Theme, Icon and Cursor
 
 cd WhiteSur-gtk-theme
-./install.sh --nord -l -c Dark -m -p 60 -P bigger --normal --noconfirm
+./install.sh --nord -l -c Dark -m -p 60 -P bigger --normal
 cd ..
 
 cd Nordzy-icon
-./install.sh -t default -c -p --noconfirm
+./install.sh -t default -c -p
 cd ..
 
 cd Nordzy-cursors
-./install.sh --noconfirm
+./install.sh
 cd ..
 
 
@@ -42,24 +54,9 @@ sudo ./tweaks.sh -F -d
 cd ..
 
 
-# Install Dependencies
-sudo pacman -S --needed - < install.txt --noconfirm
-
-
-# Enable Cups
-
-sudo systemctl enable org.cups.cupsd
-sudo systemctl start org.cups.cupsd
-
-
-# Uninstall dependencies
-
-sudo pacman -Rs - < uninstall.txt --noconfirm
-
-
 # Install Vencord 
 
-sudo sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)" --noconfirm
+sudo sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
 killall Discord
 
 
