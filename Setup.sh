@@ -78,7 +78,7 @@ sudo rm -r Gnome-Setup
 
 # Set default shell to fish
 
-
+chsh -s /usr/bin/fish
 
 
 # Restart
