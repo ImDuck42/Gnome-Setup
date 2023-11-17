@@ -37,7 +37,7 @@ RESET='\033[0m'
 #    echo -e "${BOLD}${BLUE}This is bold blue text.${RESET}"
 
 # Define ASCII art for welcome text
-custom_ascii_art="
+setupsh_ascii_art="
 ${MAGENTA}   _____      _                    _     ${RESET}
 ${MAGENTA}  / ____|    | |                  | |    ${RESET}
 ${MAGENTA} | (___   ___| |_ _   _ _ __   ___| |__  ${RESET}
@@ -47,6 +47,18 @@ ${MAGENTA} |_____/ \___|\__|\__,_| .__(_)___/_| |_|${RESET}
 ${MAGENTA}                       | |               ${RESET}
 ${MAGENTA}                       |_|               ${RESET}
 "
+# Define ASCII art for Setting up text
+settingup_ascii_art="
+${MAGENTA}   _____      _   _   _                           ${RESET}
+${MAGENTA}  / ____|    | | | | (_)                          ${RESET}
+${MAGENTA} | (___   ___| |_| |_ _ _ __   __ _   _   _ _ __  ${RESET}
+${MAGENTA}  \___ \ / _ \ __| __| | '_ \ / _` | | | | | '_ \ ${RESET}
+${MAGENTA}  ____) |  __/ |_| |_| | | | | (_| | | |_| | |_) |${RESET}
+${MAGENTA} |_____/ \___|\__|\__|_|_| |_|\__, |  \__,_| .__/ ${RESET}
+${MAGENTA}                               __/ |       | |    ${RESET}
+${MAGENTA}                              |___/        |_|    ${RESET}
+"
+
 
 # Check if run as root
 if [ "$(id -u)" -ne 0 ]; then
@@ -59,8 +71,8 @@ clear
 
 # Main screen
 while true; do
-    # Print the custom ASCII art
-    echo -e "$custom_ascii_art"
+    # Print the setupsh ASCII art
+    echo -e "$setupsh_ascii_art"
 
     # Display menu options
     echo -e "${BOLD}${GREEN}1) Set up the PC${RESET}"
@@ -74,6 +86,9 @@ while true; do
         1)
             # Option 1: Set up the PC
             echo "Setting up the PC..."
+	    sleep 5
+     		# Print the setupsh ASCII art
+    		echo -e "$settingup_ascii_art"
             # Add your setup commands here
             ;;
 
@@ -93,13 +108,15 @@ while true; do
 
         3)
             # Option 3: Exit the script
-            echo "Exiting the script. Goodbye!"
+            echo -e "${RED}Exiting the script. Goodbye!"
             exit 0
             ;;
 
         *)
             # Invalid option
-            echo "Invalid option. Please select 1, 2, or 3."
+            echo -e "${RED}Invalid option. Please select 1, 2, or 3."
+            sleep 2
+            clear
             ;;
     esac
 done
