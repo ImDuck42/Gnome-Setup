@@ -132,11 +132,9 @@ sudo pacman -Rs htop firedragon geary gestures mpv --noconfirm
 # Install dependencies
 sudo pacman -S appimagelauncher discord spotify spicetify-cli totem lolipop gimp obs-studio telegram-desktop stacer libreoffice-fresh yuzu-mainline-git citra-canary-git dconf-editor qbittirrent gnome-boxes visual-studio-code-bin steam wine bottles opera cups jre-openjdk neofetch --noconfirm
 
-
 # Enable Cups
 sudo systemctl enable org.cups.cupsd
 sudo systemctl start org.cups.cupsd
-
 
 # Clone all files for the Theme
 cd ..
@@ -147,13 +145,10 @@ git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
 git clone https://github.com/alvatip/Nordzy-icon.git
 git clone https://github.com/alvatip/Nordzy-cursors.git
 
-
 # Install the WhiteSur gtk/GDM theme and tweaks
 cp Dark_moon.png WhiteSur-gtk-theme
 cd WhiteSur-gtk-theme
 ./install.sh --nord -l -c Dark -m -p 60 -P bigger --normal
-sudo ./tweaks.sh -g -n -b 'Dark_Moon.png'
-sudo ./tweaks.sh -F -d
 cd ..
 
 # Install the Iconpack and Cursor
