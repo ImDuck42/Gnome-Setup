@@ -52,7 +52,7 @@ settingup_ascii_art="
 ${MAGENTA}   _____      _   _   _                           ${RESET}
 ${MAGENTA}  / ____|    | | | | (_)                          ${RESET}
 ${MAGENTA} | (___   ___| |_| |_ _ _ __   __ _   _   _ _ __  ${RESET}
-${MAGENTA}  \___ \ / _ \ __| __| | '_ \ / _` | | | | | '_ \ ${RESET}
+${MAGENTA}  \___ \ / _ \ __| __| | '_ \ / _' | | | | | '_ \ ${RESET}
 ${MAGENTA}  ____) |  __/ |_| |_| | | | | (_| | | |_| | |_) |${RESET}
 ${MAGENTA} |_____/ \___|\__|\__|_|_| |_|\__, |  \__,_| .__/ ${RESET}
 ${MAGENTA}                               __/ |       | |    ${RESET}
