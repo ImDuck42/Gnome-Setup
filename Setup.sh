@@ -5,10 +5,10 @@
 sudo pacman -Syuu
 
 #Uninstall dependencies
-sudo pacman -Rs --noconfirm
+sudo pacman -Rs htop firedragon geary gestures mpv --noconfirm
 
 # Install dependencies
-sudo pacman -S --noconfirm
+sudo pacman -S appimagelauncher discord spotify spicetify-cli totem lolipop gimp obs-studio telegram-desktop stacer libreoffice-fresh yuzu-mainline-git citra-canary-git dconf-editor qbittirrent gnome-boxes visual-studio-code-bin steam wine bottles opera cups jre-openjdk neofetch --noconfirm
 
 
 # Enable Cups
@@ -74,6 +74,11 @@ curl -fsSL https://raw.githubusercontent.com/Tetrax-10/Nord-Spotify/master/insta
 
 cd ..
 sudo rm -r Gnome-Setup
+
+
+# Set default shell to fish
+
+
 
 
 # Restart
