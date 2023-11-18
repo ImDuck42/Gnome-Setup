@@ -226,26 +226,27 @@ while true; do
             	clear
 		echo -e "$manualsteps_ascii_art"
 		echo -e "
-1) Sort your Application Menu
+${GREEN}1) Sort your Application Menu${RESET}
 
-2) Install Gnome Extensions:
-Extensions Website: https://extensions.gnome.org
-Dash to Dock: https://extensions.gnome.org/extension/307/dash-to-dock
-Blur my Shell: https://extensions.gnome.org/extension/3193/blur-my-shell
-Just Perfection: https://extensions.gnome.org/extension/3843/just-perfection
-Tiling Assistant: https://extensions.gnome.org/extension/3733/tiling-assistant
-Rounded Corners: https://extensions.gnome.org/extension/1514/rounded-corners
+${GREEN}2) Install Gnome Extensions:${RESET}
+${BLUE}Extensions Website:${RESET} ${CYAN}https://extensions.gnome.org${RESET}
+${BLUE}Dash to Dock:${RESET} ${CYAN}https://extensions.gnome.org/extension/307/dash-to-dock${RESET}
+${BLUE}Blur my Shell:${RESET} ${CYAN}https://extensions.gnome.org/extension/3193/blur-my-shell${RESET}
+${BLUE}Just Perfection:${RESET} ${CYAN}https://extensions.gnome.org/extension/3843/just-perfection${RESET}
+${BLUE}Tiling Assistant:${RESET} ${CYAN}https://extensions.gnome.org/extension/3733/tiling-assistant${RESET}
+${BLUE}Rounded Corners:${RESET} ${CYAN}https://extensions.gnome.org/extension/1514/rounded-corners${RESET}
 
-3) Go to your Gnome-Extensions app and enable all installed + User Themes
---> Confugere your Extensions
-gnome-extensions
+${GREEN}3) Go to your Gnome-Extensions app and enable all installed + User Themes${RESET}
+${BLUE}--> Configure your Extensions${RESET}
+${CYAN}-> gnome-extensions${RESET}
 
-4) Go to your Gnome-Tweaks app and change the Settings as you like
--> gnome-tweaks
+${GREEN}4) Go to your Gnome-Tweaks app and change the Settings as you like${RESET}
+${CYAN}-> gnome-tweaks${RESET}
 
-5) Also Tweak the settings in your Gnome-Settings
--> gnome-control-center
+${GREEN}5) Also Tweak the settings in your Gnome-Settings${RESET}
+${CYAN}-> gnome-control-center${RESET}
 "
+
 		read -p "Type 'q' to exit: " response
             	[ "$response" == "q" ] && clear
             
