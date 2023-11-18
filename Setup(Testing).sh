@@ -146,7 +146,7 @@ while true; do
 		echo -e "${YELLOW}Installing WhiteSur-gtk and Tweaks${RESET}"
 
 		# Install the WhiteSur gtk/GDM theme and tweaks
-		cp Dark_Moon.png ~/Pictures
+		cp Dark_Moon.png '~/Pictures'
 		cd WhiteSur-gtk-theme
 		./install.sh --nord -l -c Dark -m -p 60 -P bigger --normal
 		sudo ./tweaks.sh -g -n -b '~/Pictures/Dark_Moon.png'
