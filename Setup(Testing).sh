@@ -197,17 +197,11 @@ while true; do
 		echo -e "${BLUE}Stage 3) completed${RESET}"
 		sleep 2
 
-# ------------------------------------------------//Stage 4) Cleaning Up//----------------------------------------------------
+# ------------------------------------------------//Stage 4) Other//----------------------------------------------------
 
 		echo -e "${GREEN}Stage 4) 
-		Cleaning up${RESET}"
+		Other${RESET}"
 		sleep 5
-
-		echo -e "${YELLOW}Deleting Gnome-Setup Folder${RESET}"
-
-		# Delete the Gnome-Setup folder
-		cd ..
-		rm -r Gnome-Setup
 
 		echo -e "${YELLOW}Set fish as default shell${RESET}"
 
@@ -216,7 +210,7 @@ while true; do
 
 		echo -e "${BLUE}Stage 4) completed${RESET}"
 		sleep 2
-		echo -e "${MAGENTA}Setup Finished${RESET}"
+		echo -e "${MAGENTA}Setup finished, please wait ...${RESET}"
 		sleep 10
             
 # ------------------------------------------------//Manual-Steps Screen//----------------------------------------------------
