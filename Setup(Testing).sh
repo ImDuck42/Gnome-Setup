@@ -61,9 +61,11 @@ ${MAGENTA}						     |_|         ${RESET}
 
 # ------------------------------------------------//Pre-Run scripts//----------------------------------------------------
 
-# Check if the user is using GNOME and running as root
-if [ "$(id -u)" -ne 0 ] || [ "$XDG_CURRENT_DESKTOP" != "GNOME" ]; then
-    echo -e "${RED}This script is intended for GNOME environments only and requires root privileges.${RESET}"
+# Check if the user is using GNOME on Arch and running as root
+if [ "$(id -u)" -ne 0 ] || \
+   [ -z "$XDG_CURRENT_DESKTOP" ] || [ "$XDG_CURRENT_DESKTOP" != "GNOME" ] || \
+   [ "$(cat /etc/os-release | grep '^ID=' | cut -d'=' -f2)" != "arch" ]; then
+    echo -e "${RED}This script requires root privileges and is intended for GNOME on Arch Linux.${RESET}"
     exit 1
 fi
 
