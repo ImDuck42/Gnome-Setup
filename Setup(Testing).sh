@@ -178,8 +178,7 @@ while true; do
 
 # ------------------------------------------------//Stage 3) Installing Vencord and Spicetify//----------------------------------------------------
 
-		echo -e "${GREEN}stage 3)
-		Installing Vencord and Spicetify${RESET}"
+		echo -e "${GREEN}stage 3) Installing Vencord and Spicetify${RESET}"
 		sleep 5
 
 		echo -e "${YELLOW}Installing Vencord${RESET}"
@@ -206,10 +205,9 @@ while true; do
 		echo -e "${BLUE}Stage 3) completed${RESET}"
 		sleep 2
 
-# ------------------------------------------------//Stage 4) Other//----------------------------------------------------
+# ------------------------------------------------//Stage 4) Others//----------------------------------------------------
 
-		echo -e "${GREEN}Stage 4) 
-		Other${RESET}"
+		echo -e "${GREEN}Stage 4) Others${RESET}"
 		sleep 5
 
 		echo -e "${YELLOW}Set fish as default shell${RESET}"
