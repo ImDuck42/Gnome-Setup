@@ -8,3 +8,5 @@ Make the script print all what its doing for transparency
 echo -e "${Color} Updating system${RESET}"
 sleep 2
 ^-Example
+
+Manual steps page after script run
