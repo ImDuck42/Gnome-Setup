@@ -59,6 +59,21 @@ ${MAGENTA}						     | |         ${RESET}
 ${MAGENTA}						     |_|         ${RESET}
 "
 
+# ------------------------------------------------//External Rverences//----------------------------------------------------
+
+# Repository URLs
+WHITE_SUR_THEME_REPO="https://github.com/vinceliuice/WhiteSur-gtk-theme.git"
+NORDZY_ICON_REPO="https://github.com/alvatip/Nordzy-icon.git"
+NORDZY_CURSOR_REPO="https://github.com/alvatip/Nordzy-cursors.git"
+
+# Other URLs
+SPICETIFY_URL="https://spicetify.app/"
+VENCORD_URL="https://vencord.dev/"
+
+# Social URLs
+GITHUB_PROFILE_URL="https://github.com/ImDuck42"
+DISCORD_SERVER_URL="https://discord.gg/fbdYpD6wcS"
+
 # ------------------------------------------------//Pre-Run scripts//----------------------------------------------------
 
 # Check if the user is running as root
@@ -143,7 +158,7 @@ while true; do
 		echo -e "${YELLOW}Cloning Themes${RESET}"
 
 		# Clone all repositories
-		for repo in "${repositories[@]}"; do
+		for repo in "$WHITE_SUR_THEME_REPO" "$NORDZY_ICON_REPO" "$NORDZY_CURSOR_REPO"; do
 		    if git clone "$repo" 2>/dev/null; then
 		        echo -e "${GREEN}Successfully cloned $repo${RESET}"
 		    else
@@ -151,6 +166,7 @@ while true; do
 		        exit 1
 		    fi
 		done
+
   		
 		echo -e "${YELLOW}Installing WhiteSur-gtk and Tweaks${RESET}"
 
@@ -277,27 +293,28 @@ ${GREEN}6) You should also go into your apps and sett them up to your liking${RE
             ;;
 	
 	3)
-	    # Option 3: Shaow Sources page
-	    clear
-	    echo -e "$resources_ascii_art"
-	    echo -e "	   
+	   # Option 3: Show Sources page
+clear
+echo -e "$resources_ascii_art"
+echo -e "	   
 ${GREEN}WhiteSur-gtk:${RESET}
-${BLUE}->${RESET} ${CYAN}https://github.com/vinceliuice/WhiteSur-gtk-theme${RESET}
-	    	
+${BLUE}->${RESET} ${CYAN}$WHITE_SUR_THEME_REPO${RESET}
+	
 ${GREEN}Nordzy Icons:${RESET}
-${BLUE}->${RESET} ${CYAN}https://github.com/alvatip/Nordzy-icon${RESET}
-	    	
+${BLUE}->${RESET} ${CYAN}$NORDZY_ICON_REPO${RESET}
+	
 ${GREEN}Nordzy Cursors:${RESET}
-${BLUE}->${RESET} ${CYAN}https://github.com/alvatip/Nordzy-cursors${RESET}
-	    	
+${BLUE}->${RESET} ${CYAN}$NORDZY_CURSOR_REPO${RESET}
+	
 ${GREEN}Spicetify:${RESET}
-${BLUE}->${RESET} ${CYAN}https://spicetify.app/${RESET}
-	    	
+${BLUE}->${RESET} ${CYAN}$SPICETIFY_URL${RESET}
+	
 ${GREEN}Vencord:${RESET}
-${BLUE}->${RESET} ${CYAN}https://vencord.dev/${RESET}
+${BLUE}->${RESET} ${CYAN}$VENCORD_URL${RESET}
 					${MAGENTA}Made by ImDuck42${RESET}
-					${BLUE}->${RESET} ${CYAN}https://github.com/ImDuck42${RESET}
-					${BLUE}->${RESET} ${CYAN}https://discord.gg/fbdYpD6wcS${RESET}"
+					${BLUE}->${RESET} ${CYAN}$GITHUB_PROFILE_URL${RESET}
+					${BLUE}->${RESET} ${CYAN}$DISCORD_SERVER_URL${RESET}"
+
      
 	    read -p "Type 'q' to exit: " response
             [ "$response" == "q" ] && clear
