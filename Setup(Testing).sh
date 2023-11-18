@@ -118,6 +118,8 @@ while true; do
 		# Clone all files for the Theme
 		cd ..
 		mkdir -p .Applications
+  		mkdir -p Projects
+    		mkdir -p Stuff
 		mkdir -p Games
 		cd Games
 		mkdir -p Yuzu Citra
