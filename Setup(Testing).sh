@@ -171,7 +171,7 @@ while true; do
 		gsettings set org.gnome.desktop.background picture-uri '~/Pictures/Dark_Moon.png'
 		gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-Dark-solid-nord'
 		gsettings set org.gnome.desktop.interface icon-theme 'Nordzy-dark--light_panel'
-		update-alternatives --set x-cursor-theme ~/.icons/Nordzy-cursors
+		gsettings set org.gnome.desktop.interface cursor-theme 'Nordzy-cursors'
 
 		echo -e "${BLUE}Stage 2) completed ..${RESET}"
 		sleep 2
@@ -229,10 +229,11 @@ while true; do
 
 2) Install Gnome Extensions:
 Extensions Website: https://extensions.gnome.org
+Dash to Dock: https://extensions.gnome.org/extension/307/dash-to-dock
 Blur my Shell: https://extensions.gnome.org/extension/3193/blur-my-shell
 Just Perfection: https://extensions.gnome.org/extension/3843/just-perfection
 Tiling Assistant: https://extensions.gnome.org/extension/3733/tiling-assistant
-Dash to Dock: https://extensions.gnome.org/extension/307/dash-to-dock
+Rounded Corners: https://extensions.gnome.org/extension/1514/rounded-corners
 
 3) Go to your Gnome-Extensions app and enable all installed + User Themes
 --> Confugere your Extensions
