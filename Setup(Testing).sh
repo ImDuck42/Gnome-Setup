@@ -257,7 +257,7 @@ ${GREEN}6) You should also go into your apps and sett them up to your liking${RE
 
         2)
             # Option 2: Print the script
-            echo -e "${YELLOW}Printing the script:${RESET}"
+            echo -e "${YELLOW}Printing the script...${RESET}"
             sleep 2
             clear
             echo -e "${CYAN}"
