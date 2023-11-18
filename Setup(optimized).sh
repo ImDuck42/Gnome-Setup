@@ -10,7 +10,6 @@ MAGENTA='\033[0;35m'
 CYAN='\033[0;36m'
 WHITE='\033[1;37m'
 
-BOLD='\033[1m'
 RESET='\033[0m'
 
 # ASCII art
@@ -36,9 +35,20 @@ ${MAGENTA}                               __/ |       | |    ${RESET}
 ${MAGENTA}                              |___/        |_|    ${RESET}
 "
 
+manualsteps_ascii_art="
+${MAGENTA} __  __                         _      ____ _                  ${RESET}
+${MAGENTA}|  \/  |                       | |   / ____| |                 ${RESET}
+${MAGENTA}| \  / | __ _ _ __  _   _  __ _| |  | (___ | |_ ___ _ __  ___  ${RESET}
+${MAGENTA}| |\/| |/ _' | '_ \| | | |/ _' | |   \___ \| __/ _ \ '_ \/ __| ${RESET}
+${MAGENTA}| |  | | (_| | | | | |_| | (_| | |   ____) |  |  __/ |_) \__ \ ${RESET}
+${MAGENTA}|_|  |_|\__,_|_| |_|\__,_|\__,_|_|  |_____/ \__\___| .__/|___/ ${RESET}
+${MAGENTA}						     | |         ${RESET}
+${MAGENTA}						     |_|         ${RESET}
+"
+
 # Check if run as root
 if [ "$(id -u)" -ne 0 ]; then
-    echo -e "${BOLD}${RED}Please run this script as root.${RESET}"
+    echo -e "${RED}Please run this script as root.${RESET}"
     exit 1
 fi
 
@@ -50,9 +60,10 @@ while true; do
     echo -e "$setupsh_ascii_art"
 
     # Display menu options
-    echo -e "${BOLD}${GREEN}1) Set up the PC"
+    echo -e "${GREEN}1) Set up the PC"
     echo -e "2) Print the script"
-    echo -e "3) Exit the script${RESET}"
+    echo -e "3) Show Sources page"
+    echo -e "4) Exit the script${RESET}"
 
     # Prompt user for input
     read -p "Select an option: " option
@@ -60,17 +71,20 @@ while true; do
     case $option in
         1)
             # Option 1: Set up the PC
-            echo -e "${BLUE}Setting up the PC..."
+            echo -e "${BLUE}starting Setup..."
             sleep 5
             clear
             echo -e "$settingup_ascii_art"
-            # Add your setup commands here
-            pacman -Syyu --noconfirm
+            # setup commands
+            
+            
+            
+            break
             ;;
 
         2)
             # Option 2: Print the script
-            echo -e "${BOLD}${YELLOW}Printing the script:${RESET}"
+            echo -e "${YELLOW}Printing the script:${RESET}"
             sleep 2
             clear
             echo -e "${CYAN}"
@@ -79,8 +93,36 @@ while true; do
             read -p "Type 'q' to exit: " response
             [ "$response" == "q" ] && clear
             ;;
-
-        3)
+	
+	3)
+	    # Option 3: Shaow Sources page
+	    clear
+	    echo -e "${CYAN}	   
+Links to all Resources:
+	WhiteSur-gtk
+	-> https://github.com/vinceliuice/WhiteSur-gtk-theme
+	    	
+	Nordzy Icons:
+	-> https://github.com/alvatip/Nordzy-icon
+	    	
+	Nordzy Cursors:
+	-> https://github.com/alvatip/Nordzy-cursors
+	    	
+	Spicetify:
+	-> https://spicetify.app/
+	    	
+	Vencord:
+	-> https://vencord.dev/
+						Made by ImDuck42
+						-> https://github.com/ImDuck42
+						-> https://discord.gg/fbdYpD6wcS
+	    
+${RESET}"
+	    read -p "Type 'q' to exit: " response
+            [ "$response" == "q" ] && clear
+            ;;
+	    
+        4)
             # Option 3: Exit the script
             echo -e "${RED}Exiting the script. Goodbye!"
             exit 0
@@ -88,6 +130,7 @@ while true; do
 
         *)
             # Invalid option
+            echo -e "$manualsteps_ascii_art"
             echo -e "${RED}Invalid option. Please select 1, 2, or 3."
             sleep 2
             clear
@@ -95,10 +138,16 @@ while true; do
     esac
 done
 
+clear
+echo -e "$manualsteps_ascii_art"
+echo -e 
+
+
+
 # Update, Uninstall and Install dependencies
 pacman -Syuu --noconfirm
 pacman -Rs htop firedragon geary gestures mpv --noconfirm
-pacman -S appimagelauncher discord spotify spicetify-cli totem lolipop gimp obs-studio telegram-desktop stacer libreoffice-fresh yuzu-mainline-git citra-canary-git dconf-editor qbittirrent gnome-boxes visual-studio-code-bin steam wine bottles opera cups jre-openjdk neofetch --noconfirm
+pacman -S appimagelauncher discord spotify spicetify-cli totem lollypop gimp obs-studio telegram-desktop stacer libreoffice-fresh yuzu-mainline-git citra-canary-git dconf-editor qbittorrent gnome-boxes visual-studio-code-bin steam wine bottles opera cups jre-openjdk neofetch --noconfirm
 
 # Enable Cups
 systemctl enable org.cups.cupsd
