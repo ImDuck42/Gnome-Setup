@@ -61,6 +61,12 @@ ${MAGENTA}						     |_|         ${RESET}
 
 # ------------------------------------------------//Pre-Run scripts//----------------------------------------------------
 
+# Check if the user is using Gnome
+if [ "$XDG_CURRENT_DESKTOP" != "GNOME" ]; then
+    echo -e "${RED}This script is intended for GNOME environments only.${RESET}"
+    exit 1
+fi
+
 # Check if run as root
 if [ "$(id -u)" -ne 0 ]; then
     echo -e "${RED}Please run this script as root.${RESET}"
