@@ -146,10 +146,10 @@ while true; do
 		echo -e "${YELLOW}Installing WhiteSur-gtk and Tweaks${RESET}"
 
 		# Install the WhiteSur gtk/GDM theme and tweaks
-		cp Dark_moon.png WhiteSur-gtk-theme
+		cp Dark_Moon.png ~/Pictures
 		cd WhiteSur-gtk-theme
 		./install.sh --nord -l -c Dark -m -p 60 -P bigger --normal
-		sudo ./tweaks.sh -g -n -b 'Dark_Moon.png'
+		sudo ./tweaks.sh -g -n -b '~/Pictures/Dark_Moon.png'
 		sudo ./tweaks.sh -F -d
 		cd ..
 
@@ -168,7 +168,7 @@ while true; do
 
 		# Use Background Theme Iconpack and Cursor
 		cd WhiteSur-gtk-theme
-		gsettings set org.gnome.desktop.background picture-uri '~/Gnome-Setup/WhiteSur-gtk-theme/Dark_Moon.png'
+		gsettings set org.gnome.desktop.background picture-uri '~/Pictures/Dark_Moon.png'
 		gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-Dark-solid-nord'
 		gsettings set org.gnome.desktop.interface icon-theme 'Nordzy-dark--light_panel'
 		update-alternatives --set x-cursor-theme ~/.icons/Nordzy-cursors
