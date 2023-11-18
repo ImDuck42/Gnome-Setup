@@ -213,9 +213,9 @@ while true; do
 
 		echo -e "${YELLOW}Set fish as default shell${RESET}"
 
-		# Set default shell to fish
-		chsh -s /usr/bin/fish
-
+		# Change default shell to Fish if it's not already
+		[ "$(echo $SHELL)" != "/usr/bin/fish" ] && chsh -s /usr/bin/fish
+  
 		echo -e "${BLUE}Stage 4) completed${RESET}"
 		sleep 2
 		echo -e "${MAGENTA}Setup finished, please wait ...${RESET}"
