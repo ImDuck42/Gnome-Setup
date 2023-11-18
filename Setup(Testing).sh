@@ -170,6 +170,7 @@ while true; do
 		cd WhiteSur-gtk-theme
 		gsettings set org.gnome.desktop.background picture-uri '~/Pictures/Dark_Moon.png'
 		gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-Dark-solid-nord'
+  		gsettings set org.gnome.shell.extensions.user-theme name 'WhiteSur-Dark-solid-nord'
 		gsettings set org.gnome.desktop.interface icon-theme 'Nordzy-dark--light_panel'
 		gsettings set org.gnome.desktop.interface cursor-theme 'Nordzy-cursors'
 
