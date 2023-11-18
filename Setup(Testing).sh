@@ -99,8 +99,7 @@ while true; do
             
 # ------------------------------------------------//Stage 1) Updating Un-/ and Installing dependencies//----------------------------------------------------
 
-		echo -e "${GREEN}Stage 1)
-		Updating Uninstalling/Installing dependencies${RESET}"
+		echo -e "${GREEN}Stage 1) Updating Uninstalling/Installing dependencies${RESET}"
 		sleep 5
 
 		# Update, Uninstall and Install dependencies
