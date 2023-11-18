@@ -245,6 +245,8 @@ ${CYAN}-> gnome-tweaks${RESET}
 
 ${GREEN}5) Also Tweak the settings in your Gnome-Settings${RESET}
 ${CYAN}-> gnome-control-center${RESET}
+
+${GREEN}6) You should also go into your apps and sett them up to your liking${RESET}
 "
 
 		read -p "Type 'q' to exit: " response
