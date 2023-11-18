@@ -228,6 +228,7 @@ while true; do
 1) Sort your Application Menu
 
 2) Install Gnome Extensions:
+Extensions Website: https://extensions.gnome.org
 Blur my Shell: https://extensions.gnome.org/extension/3193/blur-my-shell
 Just Perfection: https://extensions.gnome.org/extension/3843/just-perfection
 Tiling Assistant: https://extensions.gnome.org/extension/3733/tiling-assistant
