@@ -97,14 +97,23 @@ while true; do
             echo -e "$settingup_ascii_art"
 	# setup commands
             
-# ------------------------------------------------//Stage 1) Updating Un-/ and Installing dependencies//----------------------------------------------------
+# ------------------------------------------------//Stage 1) Updating Un-/Installing dependencies//----------------------------------------------------
 
 		echo -e "${GREEN}Stage 1) Updating Uninstalling/Installing dependencies${RESET}"
 		sleep 5
 
 		# Update, Uninstall and Install dependencies
+
+		echo -e "${YELLOW}Updating${RESET}"
+  
 		pacman -Syuu --noconfirm
+
+		echo -e "${YELLOW}Uninstaling dependencies${RESET}"
+  
 		pacman -Rs htop firedragon geary gestures mpv --noconfirm
+
+		echo -e "${YELLOW}Installing dependencies${RESET}"
+  
 		pacman -S appimagelauncher discord spotify spicetify-cli totem lollypop gimp obs-studio telegram-desktop stacer libreoffice-fresh yuzu-mainline-git citra-canary-git dconf-editor qbittorrent gnome-boxes visual-studio-code-bin steam wine bottles opera cups jre-openjdk neofetch --noconfirm
 
 		echo -e "${BLUE}Stage 1) completed..
