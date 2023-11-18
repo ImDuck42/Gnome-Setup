@@ -114,7 +114,7 @@ while true; do
 
 		echo -e "${YELLOW}Installing dependencies${RESET}"
   
-		pacman -S appimagelauncher discord spotify spicetify-cli totem lollypop gimp obs-studio telegram-desktop stacer libreoffice-fresh yuzu-mainline-git citra-canary-git dconf-editor qbittorrent gnome-boxes visual-studio-code-bin steam wine bottles opera cups jre-openjdk neofetch --noconfirm
+		pacman -S gnome-tweaks appimagelauncher discord spotify spicetify-cli totem lollypop gimp obs-studio telegram-desktop stacer libreoffice-fresh yuzu-mainline-git citra-canary-git dconf-editor qbittorrent gnome-boxes visual-studio-code-bin steam wine bottles opera cups jre-openjdk neofetch --noconfirm
 
 		echo -e "${BLUE}Stage 1) completed..
 		sleep 2${RESET}"
