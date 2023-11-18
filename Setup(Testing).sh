@@ -233,8 +233,8 @@ Tiling Assistant: https://extensions.gnome.org/extension/3733/tiling-assistant
 Dash to Dock: https://extensions.gnome.org/extension/307/dash-to-dock
 
 3) Go to your Gnome-Extensions app and enable all installed + User Themes
-gnome-extensions
 --> Confugere your Extensions
+gnome-extensions
 
 4) Go to your Gnome-Tweaks app and change the Settings as you like
 -> gnome-tweaks
