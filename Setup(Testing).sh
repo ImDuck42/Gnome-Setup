@@ -70,6 +70,9 @@ if [ "$(id -u)" -ne 0 ] || \
     exit 1
 fi
 
+# List of repositories to clone
+repositories=("https://github.com/vinceliuice/WhiteSur-gtk-theme.git" "https://github.com/alvatip/Nordzy-icon.git" "https://github.com/alvatip/Nordzy-cursors.git")
+
 # Clear the screen
 clear
 
@@ -139,17 +142,23 @@ while true; do
 
 		echo -e "${YELLOW}Cloning Themes${RESET}"
 
-		git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
-		git clone https://github.com/alvatip/Nordzy-icon.git
-		git clone https://github.com/alvatip/Nordzy-cursors.git
-
+		# Clone all repositories
+		for repo in "${repositories[@]}"; do
+		    if git clone "$repo" 2>/dev/null; then
+		        echo -e "${GREEN}Successfully cloned $repo${RESET}"
+		    else
+		        echo -e "${RED}Warning: Unable to clone $repo. Exiting Script${RESET}"
+		        exit 1
+		    fi
+		done
+  		
 		echo -e "${YELLOW}Installing WhiteSur-gtk and Tweaks${RESET}"
 
 		# Install the WhiteSur gtk/GDM theme and tweaks
-		cp Dark_Moon.png '~/Pictures'
+		cp Dark_Moon.png '$HOME/Pictures'
 		cd WhiteSur-gtk-theme
 		./install.sh --nord -l -c Dark -m -p 60 -P bigger --normal
-		sudo ./tweaks.sh -g -n -b '~/Pictures/Dark_Moon.png'
+		sudo ./tweaks.sh -g -n -b '$HOME/Pictures/Dark_Moon.png'
 		sudo ./tweaks.sh -F -d
 		cd ..
 
@@ -168,7 +177,7 @@ while true; do
 
 		# Use Background Theme Iconpack and Cursor
 		cd WhiteSur-gtk-theme
-		gsettings set org.gnome.desktop.background picture-uri '~/Pictures/Dark_Moon.png'
+		gsettings set org.gnome.desktop.background picture-uri '$HOME/Pictures/Dark_Moon.png'
 		gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-Dark-solid-nord'
   		gsettings set org.gnome.shell.extensions.user-theme name 'WhiteSur-Dark-solid-nord'
 		gsettings set org.gnome.desktop.interface icon-theme 'Nordzy-dark--light_panel'
