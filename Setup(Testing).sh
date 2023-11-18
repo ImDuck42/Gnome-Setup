@@ -269,26 +269,25 @@ ${CYAN}-> gnome-control-center${RESET}
 	    # Option 3: Shaow Sources page
 	    clear
 	    echo -e "$resources_ascii_art"
-	    echo -e "${CYAN}	   
-WhiteSur-gtk
--> https://github.com/vinceliuice/WhiteSur-gtk-theme
+	    echo -e "	   
+${GREEN}WhiteSur-gtk:${RESET}
+${BLUE}->${RESET} ${CYAN}https://github.com/vinceliuice/WhiteSur-gtk-theme${RESET}
 	    	
-Nordzy Icons:
--> https://github.com/alvatip/Nordzy-icon
+${GREEN}Nordzy Icons:${RESET}
+${BLUE}->${RESET} ${CYAN}https://github.com/alvatip/Nordzy-icon${RESET}
 	    	
-Nordzy Cursors:
--> https://github.com/alvatip/Nordzy-cursors
+${GREEN}Nordzy Cursors:${RESET}
+${BLUE}->${RESET} ${CYAN}https://github.com/alvatip/Nordzy-cursors${RESET}
 	    	
-Spicetify:
--> https://spicetify.app/
+${GREEN}Spicetify:${RESET}
+${BLUE}->${RESET} ${CYAN}https://spicetify.app/${RESET}
 	    	
-Vencord:
--> https://vencord.dev/
-					Made by ImDuck42
-					-> https://github.com/ImDuck42
-					-> https://discord.gg/fbdYpD6wcS
-	    
-${RESET}"
+${GREEN}Vencord:${RESET}
+${BLUE}->${RESET} ${CYAN}https://vencord.dev/${RESET}
+					${MAGENTA}Made by ImDuck42${RESET}
+					${BLUE}->${RESET} ${CYAN}https://github.com/ImDuck42${RESET}
+					${BLUE}->${RESET} ${CYAN}https://discord.gg/fbdYpD6wcS${RESET}"
+     
 	    read -p "Type 'q' to exit: " response
             [ "$response" == "q" ] && clear
             ;;
