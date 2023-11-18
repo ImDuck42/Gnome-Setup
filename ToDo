@@ -3,10 +3,14 @@ Ad 4th option:
 Spicetify, Vencord, WhiteSur and Nordzy Cursor + Iconpack my github
 |-> + Socials:
 Discord, my Github
+^ Done ✅
+
 
 Make the script print all what its doing for transparency
 echo -e "${Color} Updating system${RESET}"
 sleep 2
 ^-Example
+^ Done ✅
+
 
 Manual steps page after script run
