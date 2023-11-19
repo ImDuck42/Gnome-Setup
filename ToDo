@@ -21,3 +21,9 @@ Predefine to installed/uninstalled packages
 
 rename dependencies -> packages
 ^ Done ✅
+
+set +e before uninstalling and 
+set -e after it on experimental build
+
+make "creating directories text
+from cyan to yellow
