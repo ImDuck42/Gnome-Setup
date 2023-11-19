@@ -1,0 +1,8 @@
+install_file="install.txt"
+uninstall_file="uninstall.txt"
+
+# Install and uninstall packages from their lists
+while read -r install_package || [ -n "$install_package" ]; do sudo pacman -S "$install_package"; done < "$install_file"
+while read -r uninstall_package || [ -n "$uninstall_package" ]; do sudo pacman -Rns "$uninstall_package"; done < "$uninstall_file"
+
+mkdir -p Games/Citra/Yuzu
