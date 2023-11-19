@@ -27,3 +27,10 @@ set -e after it on experimental build
 
 make "creating directories text
 from cyan to yellow
+
+when script ends put user on main_screen
+
+make another option to enable/disable
+root for this script.
+-> if not then let u enable
+-> if yes let u disable
