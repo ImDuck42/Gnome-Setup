@@ -34,3 +34,7 @@ make another option to enable/disable
 root for this script.
 -> if not then let u enable
 -> if yes let u disable
+
+add:
+sudo rm /usr/lib/python3.11/EXTERNALLY-MANAGED
+command to make it posible to pip install
