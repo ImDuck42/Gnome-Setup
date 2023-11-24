@@ -26,7 +26,7 @@ ${MAGENTA}  \___ \ / _ \ __| | | | '_ \ / __| '_ \ ${RESET}
 ${MAGENTA}  ____) |  __/ |_| |_| | |_) |\__ \ | | |${RESET}
 ${MAGENTA} |_____/ \___|\__|\__,_| .__(_)___/_| |_|${RESET}
 ${MAGENTA}                       | |               ${RESET}
-${MAGENTA}                       |_|          V_2.0${RESET}
+${MAGENTA}                       |_|  Garuda  V_2.0${RESET}
 "
 
 continuing_page_ascii_art="
