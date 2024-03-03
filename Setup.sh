@@ -123,12 +123,8 @@ PACKAGES_TO_UNINSTALL=(
     geary
     gestures
     mpv
+    kvantum
 )
-
-# ------------------------------------------------//Some Stuff//----------------------------------------------------
-
-# sudo chmod -R a+rw /opt/spotify/
-# sudo chmod -R a+rw /opt/discord/
 
 # ------------------------------------------------//All Used Functions//----------------------------------------------------
 
