@@ -26,7 +26,7 @@ ${MAGENTA}  \___ \ / _ \ __| | | | '_ \ / __| '_ \ ${RESET}
 ${MAGENTA}  ____) |  __/ |_| |_| | |_) |\__ \ | | |${RESET}
 ${MAGENTA} |_____/ \___|\__|\__,_| .__(_)___/_| |_|${RESET}
 ${MAGENTA}                       | |               ${RESET}
-${MAGENTA}                       |_|  Garuda  V_2.0${RESET}
+${MAGENTA}                       |_|  Garuda  V_2.1${RESET}
 "
 
 continuing_page_ascii_art="
@@ -189,6 +189,7 @@ ${BLUE}--> Check for root acces, Gnome and Distrobution
      ${CYAN}-> Installing Spicetify${RESET}
     ${MAGENTA}Stage 4)${RESET}
      ${CYAN}-> Changing default shell to fish if not allready
+     -> Removing python pip lock
      -> Deleting working Folder (Gnome-Setup)${RESET}
 
 ${RED}IMPORTANT: This script will EXIT on any kind of ERROR${RESET}
@@ -226,9 +227,11 @@ update_install_dependencies() {
     sleep 2
     garuda-update --noconfirm
 
+    set +e
     echo -e "${YELLOW}Uninstalling packages${RESET}"
     sleep 2
     pacman -Rs "${PACKAGES_TO_UNINSTALL[@]}" --noconfirm
+    set -e
 
     echo -e "${YELLOW}Installing packages${RESET}"
     sleep 2
@@ -241,7 +244,7 @@ install_themes() {
     sleep 5
 
     # Creating Directories
-    echo -e "${CYAN}Creating directories${RESET}"
+    echo -e "${YELLOW}Creating directories${RESET}"
     sleep 1
     mkdir -p $HOME/.Applications $HOME/Stuff $HOME/Games/{Citra,Yuzu}
 
@@ -340,6 +343,12 @@ other_tasks() {
     # Change default shell to Fish if it's not already
     echo -e "${YELLOW}Set fish as default shell if not allready${RESET}"
     [ "$(echo $SHELL)" != "/usr/bin/fish" ] && chsh -s /usr/bin/fish
+    sleep 1
+
+    # Remove pip "Externaly Managed"
+    echo -e "${YELLOW}}Removing PIP lock${RESET}"
+    rm /usr/lib/python3.11/EXTERNALLY-MANAGED
+    sleep 1
 
     echo -e "${BLUE}Stage 4) completed${RESET}"
     sleep 2
@@ -390,6 +399,21 @@ print_script() {
     [ "$response" == "q" ] && clear
 }
 
+# Function to fix Vencord/Spicetify Install
+fix_patching() {
+    echo -e "${YELLOW}Changing chmod permissions{RESET}"
+    sleep 2
+    sudo chmod -R a+rw /opt/spotify/
+    sudo chmod -R a+rw /opt/discord/
+    sleep 1
+
+    echo -e "${Yellow}Refering to Stage 3{RESET}"
+    sleep 2
+    install_vencord_spicetify
+    clear
+    main_screen
+}
+
 # Function to show sources
 show_sources() {
     clear
@@ -429,8 +453,9 @@ main_screen() {
         echo -e "${GREEN}1) Set up the PC"
         echo -e "2) Print the script"
         echo -e "3) Show Sources page"
-        echo -e "4) Restart your Device"
-        echo -e "5) Exit the script${RESET}"
+        echo -e "4) Fix Error on Vencord/Spicetify"
+        echo -e "5) Restart your Device"
+        echo -e "6) Exit the script${RESET}"
 
         # Prompt user for input
         read -p "Select an option: " option
@@ -451,12 +476,14 @@ main_screen() {
             3) 
                 show_sources 
                 ;;
-
             4)
+                fix_patching
+                ;;
+            5)
                 reboot
                 ;;
 
-            5)  
+            6)  
                 echo -e "${RED}Exiting the script. Goodbye!"
                 exit 0
                 ;;
