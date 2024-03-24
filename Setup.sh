@@ -365,6 +365,7 @@ display_manual_steps() {
     ${BLUE}Just Perfection:${RESET} ${CYAN}https://extensions.gnome.org/extension/3843/just-perfection${RESET}
     ${BLUE}Tiling Assistant:${RESET} ${CYAN}https://extensions.gnome.org/extension/3733/tiling-assistant${RESET}
     ${BLUE}Rounded Corners:${RESET} ${CYAN}https://extensions.gnome.org/extension/1514/rounded-corners${RESET}
+    ${BLUE}Quick Settings Tweaker:${RESET} ${CYAN}https://extensions.gnome.org/extension/5446/quick-settings-tweaker${RESET}
 
     ${GREEN}3) Go to your Gnome-Extensions app and enable all installed + User Themes${RESET}
     ${BLUE}--> Configure your Extensions${RESET}
