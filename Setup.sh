@@ -400,7 +400,8 @@ print_script() {
 fix_patching() {
     echo -e "${YELLOW}Changing chmod permissions{RESET}"
     sleep 2
-    sudo chmod -R a+rw /opt/spotify/
+    chmod a+wr /usr/share/spotify
+    chmod a+wr /usr/share/spotify/Apps -R
     sudo chmod -R a+rw /opt/discord/
     sleep 1
 
